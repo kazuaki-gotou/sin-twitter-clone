@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+  before_action :set_tweet, only: [:show, :update, :destroy, :edit]
 
   # GET /tweets
   # GET /tweets.json
@@ -14,7 +14,12 @@ class TweetsController < ApplicationController
 
   # GET /tweets/new
   def new
-    @tweet = Tweet.new
+    if params[:back]
+      @tweet = Tweet.new(tweet_params)
+    else
+      @tweet = Tweet.new
+    end
+    
   end
 
   # GET /tweets/1/edit
@@ -59,6 +64,10 @@ class TweetsController < ApplicationController
       format.html { redirect_to tweets_url, notice: 'Tweet was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def confirm
+    @tweet = Tweet.new(tweet_params)
   end
 
   private
