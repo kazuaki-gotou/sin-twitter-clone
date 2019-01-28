@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tweets</h1>
+<header class=header><h1>Tweets</h1></header>
 
+<div class="contain">
 <table>
   <thead>
     <tr>
@@ -21,7 +22,8 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
-<br>
-
-<%= link_to 'New Tweet', new_tweet_path %>
+<footer class="footer">
+  <%= link_to 'New Tweet', new_tweet_path %>
+</footer>
