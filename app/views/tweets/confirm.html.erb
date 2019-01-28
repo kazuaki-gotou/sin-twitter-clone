@@ -1,4 +1,4 @@
-<header class="header"><h3>以下の内容で送信する</h3></header>
+<header class="header"><h1>以下の内容で送信する</h1></header>
 
 
 <div class="contain">
@@ -7,7 +7,7 @@
 
     <p>ツイート:<%= @tweet.content %></p>
 
-    <%= form.submit "登録する" %>
+    <%= form.submit "submit" %>
 
 <% end %>
 </div>
@@ -16,6 +16,6 @@
 <%= form_with(model: @tweet, url: new_tweet_path, local: true, method: 'get') do |form| %>
 
     <%= form.hidden_field :content %>
-    <%= form.submit "戻る", name: 'back' %>
+    <%= form.submit "back", name: 'back' %>
 <% end %>
 </footer>

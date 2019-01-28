@@ -4,6 +4,6 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
-  get "/" => "tweets#index"
+  get "/" => "tweets#top"
 
 end
