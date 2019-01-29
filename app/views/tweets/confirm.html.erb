@@ -2,20 +2,19 @@
 
 
 <div class="contain">
-<%= form_with(model: @tweet, url: tweets_path, local: true) do |form| %>
-    <%= form.hidden_field :content %>
+	<%= form_with(model: @tweet, url: tweets_path, local: true) do |form| %>
+			<%= form.hidden_field :content %>
 
-    <p>ツイート:<%= @tweet.content %></p>
+			<p>ツイート:<%= @tweet.content %></p>
 
-    <%= form.submit "submit" %>
+			<%= form.submit "submit" %>
 
-<% end %>
+	<% end %>
 </div>
 
 <footer class="footer">
-<%= form_with(model: @tweet, url: new_tweet_path, local: true, method: 'get') do |form| %>
-
-    <%= form.hidden_field :content %>
-    <%= form.submit "back", name: 'back' %>
-<% end %>
+	<%= form_with(model: @tweet, url: new_tweet_path, local: true, method: 'get') do |form| %>
+			<%= form.hidden_field :content %>
+			<%= form.submit "back", name: 'back' %>
+	<% end %>
 </footer>
