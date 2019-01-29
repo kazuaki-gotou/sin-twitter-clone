@@ -1,20 +1,16 @@
 <header class="header"><h1>以下の内容で送信する</h1></header>
 
-
 <div class="contain">
 	<%= form_with(model: @tweet, url: tweets_path, local: true) do |form| %>
-			<%= form.hidden_field :content %>
-
+		<%= form.hidden_field :content %>
 			<p>ツイート:<%= @tweet.content %></p>
-
 			<%= form.submit "submit" %>
-
 	<% end %>
 </div>
 
 <footer class="footer">
 	<%= form_with(model: @tweet, url: new_tweet_path, local: true, method: 'get') do |form| %>
-			<%= form.hidden_field :content %>
-			<%= form.submit "back", name: 'back' %>
+		<%= form.hidden_field :content %>
+		<%= form.submit "back", name: 'back' %>
 	<% end %>
 </footer>
